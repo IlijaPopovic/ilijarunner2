@@ -1,0 +1,1 @@
+Ovo je previase za smrtnike
