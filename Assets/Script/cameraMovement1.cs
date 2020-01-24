@@ -17,7 +17,7 @@ public class cameraMovement1 : MonoBehaviour
 
     void Start()
     {
-        playerPosition = GameObject.FindGameObjectWithTag("Player").transform;
+        playerPosition = GameObject.FindGameObjectWithTag("Player").transform;//tra stsaviti u mage manager
 
         cameraDistanceFromPlayer = transform.position - playerPosition.position;
 
