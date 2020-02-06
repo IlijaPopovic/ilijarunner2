@@ -5,14 +5,15 @@ using UnityEngine;
 public class SegmentGenerator : MonoBehaviour
 {
     private Transform playerPosition; 
-    public GameObject[] segments;
     private float spawnLocationZ = 0.0f;
     private float segmentLenght = 500f;
     private int maxSegments = 5;
-    public Vector3[] coinPositions;
+    [SerializeField] private List<GameObject> positions = new List<GameObject>();
+    private List<GameObject> privremeniPositions;
     public GameObject Floor;
     public GameObject Obstacle;
     public GameObject Coin;
+    
     void Start()
     {
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform;
@@ -35,20 +36,12 @@ public class SegmentGenerator : MonoBehaviour
             createSegment2();
         }
     }
-    private void createSegment()// Ovo je sa prethodno definisanim pref
-    {
-        int randomSegment = Random.Range(0, segments.Length);
-        GameObject go = Instantiate(segments[randomSegment]) as GameObject;
-        go.transform.SetParent(transform);
-        go.transform.position = new Vector3(0, 0, spawnLocationZ);
-        spawnLocationZ += segmentLenght;
-    }
 
     private void createSegment2()// Ovo je random
     {
         createFloor();
         createCoin();
-        createObsticle();
+        createObsticles();
         spawnLocationZ += segmentLenght;
     }
     
@@ -61,22 +54,42 @@ public class SegmentGenerator : MonoBehaviour
 
     private void createCoin()
     {
-        int randomCoinPosition = Random.Range(0, coinPositions.Length);
+        privremeniPositions = new List<GameObject>(positions);
+        int randomCoinPosition = Random.Range(0, privremeniPositions.Count);
         GameObject c = Instantiate(Coin) as GameObject;
         c.transform.SetParent(transform);
-        c.transform.position = coinPositions[randomCoinPosition] + new Vector3(0, 0, spawnLocationZ + segmentLenght);
-        //c.transform.position.z = spawnLocationZ + segmentLenght / 2; ffs ovo ne radi proveri zasto
+        c.transform.position = privremeniPositions[randomCoinPosition].transform.position + new Vector3(0, 0, spawnLocationZ + segmentLenght);
+        privremeniPositions.RemoveAt(randomCoinPosition);
     }
 
-    private void createObsticle()
+    private void createObsticles()
     {
         int numberOfObsticles = Random.Range(1, 4);
+
         for (int i = 0; i < numberOfObsticles; i++)
         {
-            int randomObstaclePosition = Random.Range(0, 3);//Kako da izbacim mogucnost dobijanja istog random broja kao i coin
+            int randomObstaclePosition = Random.Range(0, privremeniPositions.Count);//Kako da izbacim mogucnost dobijanja istog random broja kao i coin
             GameObject o = Instantiate(Obstacle) as GameObject;
             o.transform.SetParent(transform);
-            o.transform.position = coinPositions[randomObstaclePosition] + new Vector3(0, 0, spawnLocationZ + segmentLenght);
+            o.transform.position = privremeniPositions[randomObstaclePosition].transform.position + new Vector3(0, 0, spawnLocationZ + segmentLenght);
+            privremeniPositions.RemoveAt(randomObstaclePosition);
         }
+    }
+
+    private int ReturnRandomFreePosition(int start, int end)
+    {
+        return 0;
+    }
+
+    private bool IsNumberInList(int number, List<int> list)
+    {
+        foreach (int x in list)
+        {
+            if (number == x)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
