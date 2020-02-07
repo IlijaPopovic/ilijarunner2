@@ -43,12 +43,7 @@ public class PlayerMovement1 : MonoBehaviour
         }
         else if (Input.GetKeyUp("right") && transform.position.x == PlayerPositions[0].transform.position.x)
         {
-            // RADI transform.position = new Vector3 (PlayerPositions[1].transform.position.x, transform.position.y, transform.position.z);
-
-            transition = 0;
-            Vector3 endPoint = new Vector3 (PlayerPositions[1].transform.position.x, transform.position.y, transform.position.z);
-            Vector3 startPoint = new Vector3 (PlayerPositions[0].transform.position.x, transform.position.y, transform.position.z);
-            transform.position = Vector3.Lerp(startPoint, endPoint, transition);
+            transform.position = new Vector3 (PlayerPositions[1].transform.position.x, transform.position.y, transform.position.z);
         }
         else if (Input.GetKeyUp("space") && isPlayerGrounded())
         {
