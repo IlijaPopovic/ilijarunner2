@@ -13,7 +13,7 @@ public class cameraMovement1 : MonoBehaviour
     private float cameraTransition = 0.0f;
     private float startAnimationDuration = 3.0f;
     public bool isCameraAnimationFinished = false;
-    public float playerHeight = 15.0f;
+    public float playerHeight = 0.0f;
 
     void Start()
     {

@@ -56,6 +56,7 @@
      <Compile Include="Assets\Script\cameraMovement1.cs" />
      <Compile Include="Assets\Script\coinSpin.cs" />
      <Compile Include="Assets\Script\PlayerMovement.cs" />
+     <Compile Include="Assets\Script\PlayerMovement1.cs" />
      <Compile Include="Assets\Script\SegmentGenerator.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/GitRepository/ilijarunner2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
