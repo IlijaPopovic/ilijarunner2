@@ -86,7 +86,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6354813558328558576}
-  - component: {fileID: 3516318197701511986}
   - component: {fileID: 1756603482814886817}
   m_Layer: 0
   m_Name: Player
@@ -110,25 +109,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3516318197701511986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6924349443400100711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9130e82303e5c35439f50f88aa59d84d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxLeft: -40
-  maxRight: 40
-  sideMoveSize: 40
-  movementSpeed: 5
-  moveTransition: 0
-  jumpSize: 8
-  Gravity: 50
 --- !u!114 &1756603482814886817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,4 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3511cad6b82b6ca4cb805b17ff385487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPositions: []
+  PlayerPositions:
+  - {fileID: 9174594849493971505, guid: a84f01ac57d5fe543894c43f9974cfa0, type: 3}
+  - {fileID: 3842771464108726546, guid: 5e4df0fe3dba385468211d79049d3e1a, type: 3}
+  - {fileID: 4688445378082291267, guid: 10537e3cb79522240b9eca13ae7f8832, type: 3}
