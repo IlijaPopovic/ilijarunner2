@@ -10,9 +10,13 @@ public class SegmentGenerator : MonoBehaviour
     private int maxSegments = 5;
     [SerializeField] private List<GameObject> positions = new List<GameObject>();
     private List<GameObject> privremeniPositions;
+    private List<GameObject> segmentsToDelete = new List<GameObject>();
     public GameObject Floor;
     public GameObject Obstacle;
     public GameObject Coin;
+    public GameObject Segment;
+    GameObject s;
+    private bool startCreateAndDeleteSegments = false;
     
     void Start()
     {
@@ -26,29 +30,38 @@ public class SegmentGenerator : MonoBehaviour
 
     void Update()
     {
-        createSegementEverySegmentPassed();
+            createAndDeleteSegementEverySegmentPassed();
     }
 
-    private void createSegementEverySegmentPassed()
+    private void createAndDeleteSegementEverySegmentPassed()
     {
-        if(playerPosition.transform.position.z > spawnLocationZ - segmentLenght * maxSegments)
+        if(playerPosition.transform.position.z > spawnLocationZ + segmentLenght - segmentLenght * maxSegments)
         {
             createSegment2();
+            Destroy(segmentsToDelete[0]);
+            segmentsToDelete.RemoveAt(0);
         }
     }
 
-    private void createSegment2()// Ovo je random
+    private void createSegment2()
     {
+        createParentSegment();
         createFloor();
         createCoin();
         createObsticles();
+        segmentsToDelete.Add(s);
         spawnLocationZ += segmentLenght;
     }
-    
+
+    private void createParentSegment()
+    {
+        s = Instantiate(Segment) as GameObject;
+        s.transform.SetParent(transform);
+    }
     private void createFloor()
     {
         GameObject f = Instantiate(Floor) as GameObject;
-        f.transform.SetParent(transform);
+        f.transform.SetParent(s.transform);
         f.transform.position = new Vector3(0, 0, spawnLocationZ);
     }
 
@@ -57,8 +70,8 @@ public class SegmentGenerator : MonoBehaviour
         privremeniPositions = new List<GameObject>(positions);
         int randomCoinPosition = Random.Range(0, privremeniPositions.Count);
         GameObject c = Instantiate(Coin) as GameObject;
-        c.transform.SetParent(transform);
-        c.transform.position = privremeniPositions[randomCoinPosition].transform.position + new Vector3(0, 0, spawnLocationZ + segmentLenght);
+        c.transform.SetParent(s.transform);
+        c.transform.position = privremeniPositions[randomCoinPosition].transform.position + new Vector3(0, 0, spawnLocationZ + segmentLenght / 2 );
         privremeniPositions.RemoveAt(randomCoinPosition);
     }
 
@@ -68,10 +81,10 @@ public class SegmentGenerator : MonoBehaviour
 
         for (int i = 0; i < numberOfObsticles; i++)
         {
-            int randomObstaclePosition = Random.Range(0, privremeniPositions.Count);//Kako da izbacim mogucnost dobijanja istog random broja kao i coin
+            int randomObstaclePosition = Random.Range(0, privremeniPositions.Count);
             GameObject o = Instantiate(Obstacle) as GameObject;
-            o.transform.SetParent(transform);
-            o.transform.position = privremeniPositions[randomObstaclePosition].transform.position + new Vector3(0, 0, spawnLocationZ + segmentLenght);
+            o.transform.SetParent(s.transform);
+            o.transform.position = privremeniPositions[randomObstaclePosition].transform.position + new Vector3(0, 0, spawnLocationZ + segmentLenght / 2 );
             privremeniPositions.RemoveAt(randomObstaclePosition);
         }
     }
