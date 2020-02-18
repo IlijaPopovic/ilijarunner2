@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovement1 : MonoBehaviour
 {
     [SerializeField] private List<GameObject> PlayerPositions = new List<GameObject>();
-    private cameraMovement1 camera1;
     private float moveSpeed = 100.0f;
     private float gravity = GRAVITY;
     private const float GRAVITY = -100f;
@@ -16,17 +15,17 @@ public class PlayerMovement1 : MonoBehaviour
     private bool moveRight = false;
     private bool moveUp = false;
     private bool checkForGravity = true;
+    public bool canMove = false;
     private Vector3 moveTo = new Vector3(0,0,0);
     private float inAirSec = 0.05f;
     private float speedUp = 0.1f;
     void Start()
     {
-        camera1 = GameObject.FindObjectOfType<cameraMovement1>();
     }
 
     void Update()
     {
-        if(camera1.isCameraAnimationFinished)
+        if(canMove)
         {
             Movement();
         }
