@@ -12,8 +12,8 @@ public class cameraMovement1 : MonoBehaviour
     private Vector3 offsetAnimationCameraPosition;
     private float cameraTransition = 0.0f;
     private float startAnimationDuration = 3.0f;
-    public bool isCameraAnimationFinished = false;
     public float playerHeight = 0.0f;
+    [SerializeField] private GameManager gameManager;
 
     void Start()
     {
@@ -28,8 +28,7 @@ public class cameraMovement1 : MonoBehaviour
     void Update()
     {
         if(cameraTransition > 1.0f)
-        {
-            isCameraAnimationFinished = true;
+        { 
             FolowPlayer();
         }
         else
@@ -50,5 +49,9 @@ public class cameraMovement1 : MonoBehaviour
         transform.position = Vector3.Lerp(startAnimationCameraPosition, endAnimationCameraPosition, cameraTransition);
         cameraTransition += Time.deltaTime / startAnimationDuration;
         transform.LookAt(playerPosition);
+        if(cameraTransition > 1.0f)
+        { 
+            gameManager.playerCanMove();
+        }
     }
 }

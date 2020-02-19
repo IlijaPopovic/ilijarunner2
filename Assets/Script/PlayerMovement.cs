@@ -13,20 +13,15 @@ public class PlayerMovement : MonoBehaviour
     public float Gravity = 50f;
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController palyerController;
-    private cameraMovement1 camera;
     void Start()
     {
-        camera = GameObject.FindObjectOfType<cameraMovement1>();
         palyerController = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(camera.isCameraAnimationFinished)
-        {
-            Movement();
-        }
+        Movement();
     }
 
     private void Movement()

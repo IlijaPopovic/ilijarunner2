@@ -29,6 +29,7 @@ public class PlayerMovement1 : MonoBehaviour
         {
             Movement();
         }
+        Debug.Log("::: " + canMove);
     }
 
     private void Movement()

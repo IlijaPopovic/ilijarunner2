@@ -798,6 +798,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac37bea6874ef24a9bdd206da51f74f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera1: {fileID: 3834454512228119838}
+  playerMovement1: {fileID: 2011512347}
+  score: 0
+  coin: 0
   scoreText: {fileID: 2070701227}
   coinText: {fileID: 1432867462}
 --- !u!4 &1869450175
@@ -814,6 +818,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2011512347 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1756603482814886817, guid: 0648e01ba61f792428e4f37d03c3862d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6261030465044388532}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3511cad6b82b6ca4cb805b17ff385487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2070701225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,8 +1161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92aa39650b75eb4388b03570b3a80b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCameraAnimationFinished: 0
   playerHeight: 0
+  gameManager: {fileID: 1869450174}
 --- !u!1001 &3842771463041682966
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1384,6 +1400,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4688445378082291267, guid: 10537e3cb79522240b9eca13ae7f8832,
         type: 3}
+    - target: {fileID: 2418231836598895326, guid: 0648e01ba61f792428e4f37d03c3862d,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1869450174}
     - target: {fileID: 3516318197701511986, guid: 0648e01ba61f792428e4f37d03c3862d,
         type: 3}
       propertyPath: m_Enabled
