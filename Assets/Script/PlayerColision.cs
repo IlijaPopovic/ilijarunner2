@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerColision : MonoBehaviour
 {
-    [SerializeField] private GameManager gameManager;
     private Coin coin;
     private Obsticle obsticle;
     
@@ -21,7 +20,7 @@ public class PlayerColision : MonoBehaviour
         if (coin != null)
         {
             Destroy(coin.gameObject);
-            gameManager.addCoins(coin);
+            GameManager.Instance.addCoins(coin);
         }
     }
 
@@ -29,7 +28,7 @@ public class PlayerColision : MonoBehaviour
     {
         if (obsticle != null)
         {
-            gameManager.gameOver();
+            GameManager.Instance.gameOver();
         }
     }
 }

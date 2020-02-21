@@ -19,6 +19,7 @@ public class PlayerMovement1 : MonoBehaviour
     private Vector3 moveTo = new Vector3(0,0,0);
     private float inAirSec = 0.05f;
     private float speedUp = 0.1f;
+    public GameObject lookAtPosition;
     void Start()
     {
     }
