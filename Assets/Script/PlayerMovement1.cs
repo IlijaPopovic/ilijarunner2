@@ -19,25 +19,15 @@ public class PlayerMovement1 : MonoBehaviour
     private float inAirSec = 0.05f;
     private float speedUp = 0.1f;
     public GameObject lookAtPosition;
-    void Start()
-    {
-    }
-
-    void Update()
+    public void Movement()
     {
         if(canMove)
         {
-            Movement();
+            setMoveDestination();
+            checkGravity();
+            mainMovement();
         }
     }
-
-    private void Movement()
-    {
-        setMoveDestination();
-        checkGravity();
-        mainMovement();
-    }
-
     private void mainMovement()
     {
         if (moveLeft)

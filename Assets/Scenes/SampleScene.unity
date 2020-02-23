@@ -570,14 +570,14 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 931153483}
-    characterCount: 0
+    characterCount: 9
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 0
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
-    materialCount: 1
+    lineCount: 1
+    pageCount: 1
+    materialCount: 2
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -1552,7 +1552,7 @@ PrefabInstance:
     - target: {fileID: 2970837175877239752, guid: 63bba7503497da0478a770b588d4520f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 45
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2970837175877239752, guid: 63bba7503497da0478a770b588d4520f,
         type: 3}
@@ -1791,7 +1791,7 @@ PrefabInstance:
     - target: {fileID: 3909944885101205699, guid: f54658fcd39b89d439f695bdfb180a08,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 45
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3909944885101205699, guid: f54658fcd39b89d439f695bdfb180a08,
         type: 3}
@@ -1920,6 +1920,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3256751669426317053, guid: 0648e01ba61f792428e4f37d03c3862d,
+        type: 3}
+      propertyPath: m_Name
+      value: Material
+      objectReference: {fileID: 0}
     - target: {fileID: 6354813558328558576, guid: 0648e01ba61f792428e4f37d03c3862d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1975,6 +1980,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6832790487817588728, guid: 0648e01ba61f792428e4f37d03c3862d,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6924349443400100711, guid: 0648e01ba61f792428e4f37d03c3862d,
         type: 3}
       propertyPath: m_Name
@@ -1997,7 +2007,7 @@ PrefabInstance:
     - target: {fileID: 6597099475215235664, guid: 473cdb0e6a93c834f96da04fe6788d4e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 45
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6597099475215235664, guid: 473cdb0e6a93c834f96da04fe6788d4e,
         type: 3}

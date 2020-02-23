@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        playerMovement1.Movement();
         writeScoreAndCoin();
     }
 
