@@ -14,7 +14,6 @@ public class PlayerMovement1 : MonoBehaviour
     private bool moveLeft = false;
     private bool moveRight = false;
     private bool moveUp = false;
-    private bool checkForGravity = true;
     public bool canMove = false;
     private Vector3 moveTo = new Vector3(0,0,0);
     private float inAirSec = 0.05f;
@@ -30,7 +29,6 @@ public class PlayerMovement1 : MonoBehaviour
         {
             Movement();
         }
-        Debug.Log("::: " + canMove);
     }
 
     private void Movement()
@@ -79,8 +77,7 @@ public class PlayerMovement1 : MonoBehaviour
             }
             else if(transform.position.y > moveTo.y)
             {
-                moveUp = false;// Izbaci ovo ako ubacis corutine
-                //StartCoroutine(waitForFall(inAirSec));
+                moveUp = false;
                 transform.position += new Vector3(0, gravity, moveSpeed) * Time.deltaTime;
             }
         }
@@ -93,17 +90,14 @@ public class PlayerMovement1 : MonoBehaviour
     }
     private void checkGravity()
     {
-        if(checkForGravity)
+        if(isPlayerGrounded())
         {
-            if(isPlayerGrounded())
-            {
-                gravity = 0;
-            }
-            else
-            {
-                gravity = GRAVITY;
-            }
-        }    
+            gravity = 0;
+        }
+        else
+        {
+            gravity = GRAVITY;
+        }
     }
     private void setMoveDestination()
     {
@@ -146,11 +140,4 @@ public class PlayerMovement1 : MonoBehaviour
         }
     }
 
-    private IEnumerator waitForFall(float fallTime){
-        gravity = 0;
-        checkForGravity = false;
-        yield return new WaitForSeconds(fallTime);
-        moveUp = false;
-        checkForGravity = true;
-    }
 }
