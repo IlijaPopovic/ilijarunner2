@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
         LeaderboardBackButton.onClick.AddListener(OnLeaderboardBackButtonClick);
     }
 
-    public void OnStartButtonClick()
+    private void OnStartButtonClick()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
