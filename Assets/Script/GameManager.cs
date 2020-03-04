@@ -7,13 +7,15 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private cameraMovement1 camera1;
     [SerializeField] private PlayerMovement1 playerMovement1;
     [SerializeField] private GameOver gameOver1;
     [SerializeField] private float score = 0.00f;
     public float coin = 0.00f;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI coinText;
+    [SerializeField] private coinImage coinImage;
+    [SerializeField] private ScoreImage scoreImage;
+
 
     public static GameManager Instance = null;
 
@@ -46,6 +48,8 @@ public class GameManager : MonoBehaviour
     public void playerCanMove()
     {
         playerMovement1.canMove = true;
+        coinImage.DispalyScoreImage(true);
+        scoreImage.DispalyScoreImage(true);
     }
 
     public void gameOver()
@@ -58,4 +62,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+
+
 }

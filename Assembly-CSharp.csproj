@@ -53,8 +53,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\coinImage.cs" />
      <Compile Include="Assets\lookAt.cs" />
      <Compile Include="Assets\lookay.cs" />
+     <Compile Include="Assets\ScoreImage.cs" />
      <Compile Include="Assets\Script\cameraMovement1.cs" />
      <Compile Include="Assets\Script\Coin.cs" />
      <Compile Include="Assets\Script\coinSpin.cs" />
