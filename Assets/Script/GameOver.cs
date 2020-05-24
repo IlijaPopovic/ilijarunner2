@@ -25,7 +25,6 @@ public class GameOver : MonoBehaviour
 
     private void OnStartMenuButtonClick()
     {
-        Debug.Log("click");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
