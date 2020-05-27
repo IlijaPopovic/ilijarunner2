@@ -19,6 +19,7 @@ public class PlayerMovement1 : MonoBehaviour
     private float inAirSec = 0.05f;
     private float speedUp = 0.1f;
     public GameObject lookAtPosition;
+    public SwipeControl swipeControl;
     public void Movement()
     {
         if(canMove)
@@ -91,27 +92,27 @@ public class PlayerMovement1 : MonoBehaviour
     }
     private void setMoveDestination()
     {
-        if (Input.GetKeyUp("left") && transform.position.x == PlayerPositions[1].transform.position.x)
+        if (swipeControl.left && transform.position.x == PlayerPositions[1].transform.position.x)
         {
             moveLeft = true;
             moveTo = new Vector3 (PlayerPositions[0].transform.position.x, moveTo.y, transform.position.z);
         }
-        else if (Input.GetKeyUp("right") && transform.position.x == PlayerPositions[1].transform.position.x)
+        else if (swipeControl.right && transform.position.x == PlayerPositions[1].transform.position.x)
         {
             moveRight = true;
             moveTo = new Vector3 (PlayerPositions[2].transform.position.x, moveTo.y, transform.position.z);
         }
-        else if (Input.GetKeyUp("left") && transform.position.x == PlayerPositions[2].transform.position.x)
+        else if (swipeControl.left && transform.position.x == PlayerPositions[2].transform.position.x)
         {
             moveLeft = true;
             moveTo = new Vector3 (PlayerPositions[1].transform.position.x, moveTo.y, transform.position.z);
         }
-        else if (Input.GetKeyUp("right") && transform.position.x == PlayerPositions[0].transform.position.x)
+        else if (swipeControl.right && transform.position.x == PlayerPositions[0].transform.position.x)
         {
             moveRight = true;
             moveTo = new Vector3 (PlayerPositions[1].transform.position.x, moveTo.y, transform.position.z);
         }
-        else if (Input.GetKeyUp("space") && isPlayerGrounded())
+        else if (swipeControl.up && isPlayerGrounded())
         {
             moveUp = true;
             moveTo = new Vector3 (moveTo.x, jumpHeight, moveTo.z);
