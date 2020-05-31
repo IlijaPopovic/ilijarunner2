@@ -56,6 +56,8 @@
      <Compile Include="Assets\coinImage.cs" />
      <Compile Include="Assets\lookAt.cs" />
      <Compile Include="Assets\lookay.cs" />
+     <Compile Include="Assets\PlayerScore.cs" />
+     <Compile Include="Assets\PlayerScores.cs" />
      <Compile Include="Assets\ScoreImage.cs" />
      <Compile Include="Assets\Script\cameraMovement1.cs" />
      <Compile Include="Assets\Script\Coin.cs" />
@@ -101,6 +103,8 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+     <Compile Include="Assets\UnosImena.cs" />
+     <Compile Include="Assets\UnosImena1.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />

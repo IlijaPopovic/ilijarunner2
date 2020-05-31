@@ -1572,6 +1572,7 @@ GameObject:
   - component: {fileID: 1547688957}
   - component: {fileID: 1547688956}
   - component: {fileID: 1547688955}
+  - component: {fileID: 1547688958}
   m_Layer: 5
   m_Name: UnosImena
   m_TagString: Untagged
@@ -1661,7 +1662,18 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls: []
@@ -1681,7 +1693,7 @@ MonoBehaviour:
   m_CustomCaretColor: 1
   m_SelectionColor: {r: 0.6666667, g: 1, b: 1, a: 0.5}
   m_Text: 
-  m_CaretBlinkRate: 0.85
+  m_CaretBlinkRate: 0.21
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
@@ -1727,6 +1739,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547688953}
   m_CullTransparentMesh: 0
+--- !u!114 &1547688958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547688953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad1f48d18b0a33429c019d02feca69e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1556643134
 GameObject:
   m_ObjectHideFlags: 0

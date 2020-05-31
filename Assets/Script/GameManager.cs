@@ -15,8 +15,6 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI coinText;
     [SerializeField] private coinImage coinImage;
     [SerializeField] private ScoreImage scoreImage;
-
-
     public static GameManager Instance = null;
 
     private void Awake()
@@ -25,6 +23,11 @@ public class GameManager : MonoBehaviour
         {
             GameManager.Instance = this;
         }
+    }
+
+    private void OnUnosImenaClick()
+    {
+        TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
     }
 
     void Update()
